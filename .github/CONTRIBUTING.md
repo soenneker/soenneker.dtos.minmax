@@ -1,4 +1,4 @@
-# Contributing to Soenneker.Dtos.MinMax
+﻿# Contributing to Soenneker.Dtos.MinMax
 
 We're excited that you're interested in contributing!
 
