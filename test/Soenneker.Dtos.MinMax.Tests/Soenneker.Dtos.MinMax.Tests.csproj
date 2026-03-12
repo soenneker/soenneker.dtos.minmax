@@ -27,7 +27,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\src\Soenneker.Dtos.MinMax.csproj" />
+        <ProjectReference Include="..\..\src\Soenneker.Dtos.MinMax\Soenneker.Dtos.MinMax.csproj" />
     </ItemGroup>
 
     <ItemGroup>
