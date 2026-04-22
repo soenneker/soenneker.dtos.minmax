@@ -1,16 +1,15 @@
-using Soenneker.Tests.FixturedUnit;
-using Xunit;
+using Soenneker.Tests.HostedUnit;
 
 namespace Soenneker.Dtos.MinMax.Tests;
 
-[Collection("Collection")]
-public class MinMaxTests : FixturedUnitTest
+[ClassDataSource<Host>(Shared = SharedType.PerTestSession)]
+public class MinMaxTests : HostedUnitTest
 {
-    public MinMaxTests(Fixture fixture, ITestOutputHelper output) : base(fixture, output)
+    public MinMaxTests(Host host) : base(host)
     {
     }
 
-    [Fact]
+    [Test]
     public void Default()
     {
 
