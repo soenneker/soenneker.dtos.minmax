@@ -12,11 +12,17 @@ namespace Soenneker.Dtos.MinMax;
 [PublicOpenApiObject]
 public record MinMax
 {
+    /// <summary>
+    /// Gets or sets min.
+    /// </summary>
     [Required]
     [JsonPropertyName("min")]
     [JsonProperty("min")]
     public decimal Min { get; set; }
 
+    /// <summary>
+    /// Gets or sets max.
+    /// </summary>
     [Required]
     [JsonPropertyName("max")]
     [JsonProperty("max")]
