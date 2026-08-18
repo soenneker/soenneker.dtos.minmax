@@ -6,14 +6,13 @@ using Soenneker.Attributes.PublicOpenApiObject;
 namespace Soenneker.Dtos.MinMax;
 
 /// <summary>
-/// A minimal Record type with a Min (decimal) and a Max (decimal) and maximum JSON compatibility
+/// Defines an inclusive decimal interval with minimum and maximum bounds.
 /// </summary>
-/// <remarks>Record type, avoid modification</remarks>
 [PublicOpenApiObject]
 public record MinMax
 {
     /// <summary>
-    /// Gets or sets min.
+    /// Inclusive lower bound of the interval.
     /// </summary>
     [Required]
     [JsonPropertyName("min")]
@@ -21,7 +20,7 @@ public record MinMax
     public decimal Min { get; set; }
 
     /// <summary>
-    /// Gets or sets max.
+    /// Inclusive upper bound of the interval.
     /// </summary>
     [Required]
     [JsonPropertyName("max")]
