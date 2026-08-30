@@ -5,7 +5,7 @@
 
 # Soenneker.Dtos.MinMax
 
-Defines an inclusive decimal interval with minimum and maximum bounds.
+A serializable pair of decimal bounds for APIs and configuration models that represent a minimum and maximum.
 
 ## Install
 
@@ -13,13 +13,27 @@ Defines an inclusive decimal interval with minimum and maximum bounds.
 dotnet add package Soenneker.Dtos.MinMax
 ```
 
-## What you get
+## Usage
 
-- `MinMax` — Defines an inclusive decimal interval with minimum and maximum bounds.
+```csharp
+using Soenneker.Dtos.MinMax;
 
-## API at a glance
+var allowedPrice = new MinMax
+{
+    Min = 10.00m,
+    Max = 75.50m
+};
 
-| API | What it does | Result / important behavior |
-| --- | --- | --- |
-| `MinMax.Min` | Inclusive lower bound of the interval. | Inclusive lower bound of the interval. |
-| `MinMax.Max` | Inclusive upper bound of the interval. | Inclusive upper bound of the interval. |
+bool isAllowed = price >= allowedPrice.Min && price <= allowedPrice.Max;
+```
+
+It serializes with the property names `min` and `max` under both `System.Text.Json` and Newtonsoft.Json.
+
+```json
+{
+  "min": 10.00,
+  "max": 75.50
+}
+```
+
+`MinMax` is a transport model, not an interval implementation. It does not enforce `Min <= Max`, perform containment checks, or normalize reversed bounds; validate those rules in the consuming domain when they matter.
