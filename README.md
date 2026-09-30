@@ -27,7 +27,7 @@ var allowedPrice = new MinMax
 bool isAllowed = price >= allowedPrice.Min && price <= allowedPrice.Max;
 ```
 
-It serializes with the property names `min` and `max` under both `System.Text.Json` and Newtonsoft.Json.
+It serializes with the property names `min` and `max` under `System.Text.Json`.
 
 ```json
 {
